@@ -1,0 +1,120 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.chat-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#chat-box {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    line-height: 1.4;
+}
+
+.message.user {
+    background-color: #d1e7fd;
+    text-align: right;
+    margin-left: 40px;
+}
+
+.message.bot {
+    background-color: #e2e3e5;
+    margin-right: 40px;
+}
+
+.input-area {
+    display: flex;
+    align-items: flex-end; /* Align items to bottom */
+    gap: 10px; /* Space between elements */
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+#user-input {
+    flex-grow: 1; /* Take available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none; /* Prevent resizing */
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#record-button.recording {
+    background-color: #dc3545; /* Red when recording */
+}
+#record-button.recording:hover {
+    background-color: #a71d2a;
+}
+
+
+#status {
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9em;
+    height: 1.2em; /* Reserve space to prevent layout shifts */
+}
+
+/* Accessibility focus styles */
+button:focus, textarea:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+/* Optional: Loading indicator */
+.loading::after {
+    content: ' ...';
+    display: inline-block;
+    animation: ellipsis 1.5s infinite;
+}
+
+@keyframes ellipsis {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+}
